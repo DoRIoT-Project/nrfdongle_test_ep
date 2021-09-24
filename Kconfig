@@ -1,0 +1,21 @@
+menuconfig KCONFIG_APP
+    bool "Configure application"
+    default y
+    help
+        This will enable configuring the application
+
+if KCONFIG_APP
+
+config DCA_NETWORK
+    bool "Enable UDP throughput server"
+    default y
+
+config RD_ADDR
+    string "IPv6 adress of the RD"
+    default "fd00:dead:beef::1"
+
+config RD_PORT
+    int "CoAP port of the RD"
+    default 5683
+
+endif # KCONFIG_DCA
